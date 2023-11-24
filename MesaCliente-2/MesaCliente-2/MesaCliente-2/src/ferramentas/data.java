@@ -1,0 +1,103 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ferramentas;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ *
+ * @author alunos
+ */
+public class data {
+
+    public String mes, dia, ano, dia_semana, hora, mesdata;
+    public String mesCerto;
+    public int a;
+
+    SimpleDateFormat horaformatada = new SimpleDateFormat("HH:mm:ss");
+
+    public void le_hora() {
+        Date horaAtual = new Date();
+        hora = horaformatada.format(horaAtual);
+    }
+
+    public String le_data() {
+        String txt = "";
+        Date data = new Date();
+        mesdata = "" + data.getMonth();
+        a = Integer.parseInt(mesdata);
+        a += 1;
+        dia = "" + data.getDate();
+        ano = "" + (1900 + data.getYear());
+// dia_semana = ""+data.getDay();
+        switch (data.getDay()) {
+            case 0:
+                dia_semana = "Domingo";
+                break;
+            case 1:
+                dia_semana = "Segunda-Feira";
+                break;
+            case 2:
+                dia_semana = "Terça-Feira";
+                break;
+            case 3:
+                dia_semana = "Quarta-Feira";
+                break;
+            case 4:
+                dia_semana = "Quinta-Feira";
+                break;
+            case 5:
+                dia_semana = "Sexta-Feira";
+                break;
+            case 6:
+                dia_semana = "Sabado";
+                break;
+        }
+
+        switch (data.getMonth()) {
+            case 0:
+                mes = "Janeiro";
+                break;
+            case 1:
+                mes = "Fevereiro";
+                break;
+            case 2:
+                mes = "Março";
+                break;
+            case 3:
+                mes = "Abril";
+                break;
+            case 4:
+                mes = "Maio";
+                break;
+            case 5:
+                mes = "Junho";
+                break;
+            case 6:
+                mes = "Julho";
+                break;
+            case 7:
+                mes = "Agosto";
+                break;
+            case 8:
+                mes = "Setembro";
+                break;
+            case 9:
+                mes = "Outubro";
+                break;
+            case 10:
+                mes = "Novembro";
+                break;
+            case 11:
+                mes = "Dezembro";
+                break;
+
+        }
+
+        return txt;
+    }
+
+}
